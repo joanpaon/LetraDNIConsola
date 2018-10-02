@@ -15,6 +15,7 @@
  */
 package org.japo.java.main;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -28,7 +29,8 @@ public class Main {
      */
     public static void main(String[] args) {
         // Instanciar Scanner
-        Scanner scn = new Scanner(System.in);
+        Scanner scn = new Scanner(System.in, "ISO-8859-1");
+        scn.useLocale(Locale.ENGLISH);
         
         // Variable
         char letraDNI;
@@ -40,10 +42,10 @@ public class Main {
             letraDNI = scn.nextLine().charAt(0);
 
             // Mensaje
-            System.out.printf("Letra DNI ................: %c\n", letraDNI);
+            System.out.printf("Letra DNI ................: %c%n", letraDNI);
         } catch (Exception e) {
             // Mensaje
-            System.out.println("Entrada incorrecta");
+            System.out.println("ERROR: Entrada incorrecta");
         }
     }
 }
