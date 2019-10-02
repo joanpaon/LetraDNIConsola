@@ -24,14 +24,15 @@ import java.util.Scanner;
  */
 public class Main {
 
+    // Instanciar Scanner
+    public static final Scanner SCN
+            = new Scanner(System.in, "ISO-8859-1")
+                    .useLocale(Locale.ENGLISH).useDelimiter("\\s+");
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Instanciar Scanner
-        Scanner scn = new Scanner(System.in, "ISO-8859-1");
-        scn.useLocale(Locale.ENGLISH);
-        
         // Variable
         char letraDNI;
 
@@ -39,7 +40,7 @@ public class Main {
         try {
             // Leer dato
             System.out.print("Letra DNI ................: ");
-            letraDNI = scn.nextLine().charAt(0);
+            letraDNI = SCN.nextLine().charAt(0);
 
             // Mensaje
             System.out.printf("Letra DNI ................: %c%n", letraDNI);
